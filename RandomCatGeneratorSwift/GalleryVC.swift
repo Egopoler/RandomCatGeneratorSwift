@@ -7,16 +7,7 @@
 
 import UIKit
 
-class GalleryVC: UIViewController, AnyViewController {
-    var presenter: AnyPresenter?
-    
-    func update(with users: [User]) {
-        
-    }
-    
-    func update(with error: String) {
-        
-    }
+class GalleryVC: UIViewController {
     
 
     override func viewDidLoad() {

@@ -17,10 +17,6 @@
 		526B96B42A62CF9A00F663A9 /* RandomCatGeneratorSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B96B32A62CF9A00F663A9 /* RandomCatGeneratorSwiftUITestsLaunchTests.swift */; };
 		526B96C12A62E34B00F663A9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B96C02A62E34B00F663A9 /* MainVC.swift */; };
 		526B96C32A62EC4500F663A9 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B96C22A62EC4500F663A9 /* GalleryVC.swift */; };
-		526E3F4C2A69526800F1279E /* Iteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F4B2A69526800F1279E /* Iteractor.swift */; };
-		526E3F4E2A69527C00F1279E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F4D2A69527C00F1279E /* Presenter.swift */; };
-		526E3F502A69529300F1279E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F4F2A69529300F1279E /* Entity.swift */; };
-		526E3F522A6952A300F1279E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F512A6952A300F1279E /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +51,6 @@
 		526B96B32A62CF9A00F663A9 /* RandomCatGeneratorSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatGeneratorSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		526B96C02A62E34B00F663A9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		526B96C22A62EC4500F663A9 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
-		526E3F4B2A69526800F1279E /* Iteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iteractor.swift; sourceTree = "<group>"; };
-		526E3F4D2A69527C00F1279E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		526E3F4F2A69529300F1279E /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		526E3F512A6952A300F1279E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +101,8 @@
 		526B968F2A62CF9900F663A9 /* RandomCatGeneratorSwift */ = {
 			isa = PBXGroup;
 			children = (
-				526E3F4A2A69523500F1279E /* VIPER */,
+				526B96C02A62E34B00F663A9 /* MainVC.swift */,
+				526B96C22A62EC4500F663A9 /* GalleryVC.swift */,
 				526B96902A62CF9900F663A9 /* AppDelegate.swift */,
 				526B96922A62CF9900F663A9 /* SceneDelegate.swift */,
 				526B96962A62CF9900F663A9 /* Main.storyboard */,
@@ -135,19 +128,6 @@
 				526B96B32A62CF9A00F663A9 /* RandomCatGeneratorSwiftUITestsLaunchTests.swift */,
 			);
 			path = RandomCatGeneratorSwiftUITests;
-			sourceTree = "<group>";
-		};
-		526E3F4A2A69523500F1279E /* VIPER */ = {
-			isa = PBXGroup;
-			children = (
-				526B96C02A62E34B00F663A9 /* MainVC.swift */,
-				526B96C22A62EC4500F663A9 /* GalleryVC.swift */,
-				526E3F4B2A69526800F1279E /* Iteractor.swift */,
-				526E3F4D2A69527C00F1279E /* Presenter.swift */,
-				526E3F4F2A69529300F1279E /* Entity.swift */,
-				526E3F512A6952A300F1279E /* Router.swift */,
-			);
-			path = VIPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,12 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526E3F522A6952A300F1279E /* Router.swift in Sources */,
-				526E3F4E2A69527C00F1279E /* Presenter.swift in Sources */,
 				526B96912A62CF9900F663A9 /* AppDelegate.swift in Sources */,
-				526E3F502A69529300F1279E /* Entity.swift in Sources */,
 				526B96C12A62E34B00F663A9 /* MainVC.swift in Sources */,
-				526E3F4C2A69526800F1279E /* Iteractor.swift in Sources */,
 				526B96932A62CF9900F663A9 /* SceneDelegate.swift in Sources */,
 				526B96C32A62EC4500F663A9 /* GalleryVC.swift in Sources */,
 			);

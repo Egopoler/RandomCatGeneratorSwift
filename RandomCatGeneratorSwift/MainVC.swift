@@ -7,20 +7,9 @@
 
 import UIKit
 
-protocol AnyViewController {
-    var presenter: AnyPresenter? { get set }
-    
-    func update(with users: [User])
-    
-    func update(with error: String)
-    
-    
-}
 
-class MainVC: UIViewController, AnyViewController {
-    
-    var presenter: AnyPresenter?
-    
+class MainVC: UIViewController {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,32 +31,6 @@ class MainVC: UIViewController, AnyViewController {
             //destVC.character = sender as? RaMCharacter
             //destVC.delegate = self
         }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func update(with users: [User]) {
-//        DispatchQueue.main.async {
-//            self.users = users
-//            self.tableView.reloadData()
-//            self.tableView.isHidden = false
-//        }
-        
-    }
-    
-    func update(with error: String) {
-        
     }
     
 
