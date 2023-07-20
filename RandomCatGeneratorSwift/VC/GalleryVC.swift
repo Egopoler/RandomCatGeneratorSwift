@@ -10,9 +10,12 @@ import UIKit
 class GalleryVC: UIViewController {
     
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -21,6 +24,15 @@ class GalleryVC: UIViewController {
         // ViewController.myStoryboard = storyboard
         print("MyGalleryController has been initialized")
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     /*
@@ -33,4 +45,17 @@ class GalleryVC: UIViewController {
     }
     */
 
+}
+extension GalleryVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let catCell = tableView.dequeueReusableCell(withIdentifier: "CatTableViewCell") as? CatTableViewCell
+        else { return UITableViewCell() }
+        return catCell
+    }
+    
+    
 }

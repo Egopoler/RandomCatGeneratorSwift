@@ -110,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="251" id="7ed-2c-2aC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="251" id="7ed-2c-2aC" customClass="CatTableViewCell" customModule="RandomCatGeneratorSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ed-2c-2aC" id="iUl-3t-hjw">
@@ -130,6 +130,9 @@
                                                 <constraint firstItem="Rk9-wo-xhj" firstAttribute="centerY" secondItem="iUl-3t-hjw" secondAttribute="centerY" id="ym6-E8-wG1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="catImage" destination="Rk9-wo-xhj" id="8ye-2Q-Egi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -144,6 +147,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p5s-oD-OyP"/>
+                    <connections>
+                        <outlet property="tableView" destination="DQm-bc-RLl" id="fRr-Cr-LPs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AII-Ww-Pjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
