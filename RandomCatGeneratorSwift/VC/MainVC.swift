@@ -23,12 +23,10 @@ class MainVC: UIViewController {
         
         
         updateImage()
-        //self.catImageView.image = Interactor.shared.downloadAnonymousImage()
-        // Do any additional setup after loading the view.
+
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // ViewController.myStoryboard = storyboard
         print("MyViewController has been initialized")
     }
     
@@ -39,8 +37,7 @@ class MainVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? GalleryVC {
-            //destVC.character = sender as? RaMCharacter
-            //destVC.delegate = self
+            //additional code for segue
         }
     }
     
@@ -50,8 +47,7 @@ class MainVC: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard var cat_id: String = self.currentCat?._id else {return}
-        print("try to add this cat in model: \(cat_id)")
+        guard let cat_id: String = self.currentCat?._id else {return}
         Interactor.shared.addInModel(from: cat_id)
         
         
@@ -67,7 +63,6 @@ extension MainVC {
             switch result {
                 
             case let .success(response):
-                print(12)
                 let url = BASE_URL + "/cat/" + response._id
                 print(url)
                 self.currentCat = response
@@ -78,9 +73,7 @@ extension MainVC {
                         return
                     }
 
-                    print(img == nil)
                     self.catImageView.image = img
-                    print("image was set")
                     
                 }
                 
@@ -88,7 +81,7 @@ extension MainVC {
                 
             case let .failure(error):
                 print(13)
-                print(error)
+                print(error.localizedDescription)
                 self.currentCat = nil
                 self.catImageView.image = Interactor.shared.downloadAnonymousImage()
             }

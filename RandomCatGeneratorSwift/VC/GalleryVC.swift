@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class GalleryVC: UIViewController {
+class GalleryVC: UIViewController, NSFetchedResultsControllerDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -25,7 +25,7 @@ class GalleryVC: UIViewController {
             sectionNameKeyPath: nil,
             cacheName: nil
         )
-        //frc.delegate = self
+        frc.delegate = self
         return frc
     }()
     
@@ -35,19 +35,25 @@ class GalleryVC: UIViewController {
         do{
             try frc.performFetch()
         }catch{
-            print(error)
+            print(error.localizedDescription)
         }
-        //Interactor.shared.deleteAllCats()
-        // Do any additional setup after loading the view.
+
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // ViewController.myStoryboard = storyboard
         print("MyGalleryController has been initialized")
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? CatDetailVC {
+            destVC.cat = sender as? CatGallery
+        }
+    }
     
     
     
@@ -80,12 +86,15 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let catCell = tableView.dequeueReusableCell(withIdentifier: "CatTableViewCell") as? CatTableViewCell
         else { return UITableViewCell() }
-        print("add real cat")
         catCell.setUpData(frc.object(at: indexPath))
         
         
         
         return catCell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cat: CatGallery = frc.object(at: indexPath)
+        performSegue(withIdentifier: "ToCatDetailVC", sender: cat)
     }
     
     

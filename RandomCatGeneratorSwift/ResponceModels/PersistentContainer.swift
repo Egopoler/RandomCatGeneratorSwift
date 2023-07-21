@@ -13,7 +13,7 @@ class PersistentContainer: NSPersistentContainer{
         let conteiner = PersistentContainer(name: "Model")
         conteiner.loadPersistentStores { _, error in
             if let error{
-                print(error)
+                print(error.localizedDescription)
             }
         }
         return conteiner
@@ -25,7 +25,7 @@ class PersistentContainer: NSPersistentContainer{
         do{
             try context.save()
         }catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 }
