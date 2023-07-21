@@ -9,7 +9,13 @@ import UIKit
 
 
 class MainVC: UIViewController {
-        
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +38,15 @@ class MainVC: UIViewController {
             //destVC.delegate = self
         }
     }
+    
+    
+    @IBAction func generateNewCatButtonTapped(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
     
 
 }

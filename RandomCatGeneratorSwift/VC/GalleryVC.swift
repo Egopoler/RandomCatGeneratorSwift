@@ -6,12 +6,28 @@
 //  View part of VIPER
 
 import UIKit
+import CoreData
 
 class GalleryVC: UIViewController {
     
 
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
+    let userInteractiveQueue = DispatchQueue.main
+    
+    lazy var frc: NSFetchedResultsController<CatGallery> = {
+        let request = CatGallery.fetchRequest()
+        request.sortDescriptors = []
+        let frc = NSFetchedResultsController(fetchRequest: request,
+            managedObjectContext: PersistentContainer.shared.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        //frc.delegate = self
+        return frc
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

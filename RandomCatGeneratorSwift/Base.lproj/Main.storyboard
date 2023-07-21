@@ -71,6 +71,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseForegroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="generateNewCatButtonTapped:" destination="cg1-9n-4p5" eventType="touchUpInside" id="5l1-x8-7yN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D1O-pQ-QYS"/>

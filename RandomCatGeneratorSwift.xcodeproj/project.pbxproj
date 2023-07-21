@@ -22,6 +22,7 @@
 		526E3F5E2A69BCEF00F1279E /* CatGallery+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F5C2A69BCEF00F1279E /* CatGallery+CoreDataClass.swift */; };
 		526E3F5F2A69BCEF00F1279E /* CatGallery+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F5D2A69BCEF00F1279E /* CatGallery+CoreDataProperties.swift */; };
 		526E3F612A69C09E00F1279E /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F602A69C09E00F1279E /* PersistentContainer.swift */; };
+		526E3F652A6A8A9100F1279E /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3F642A6A8A9100F1279E /* Interactor.swift */; };
 		7C6AA1F92A6A6C1B0023CF34 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6AA1F82A6A6C1B0023CF34 /* APITarget.swift */; };
 		7C6AA1FC2A6A6C600023CF34 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6AA1FB2A6A6C600023CF34 /* CombineMoya */; };
 		7C6AA1FE2A6A6C600023CF34 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6AA1FD2A6A6C600023CF34 /* Moya */; };
@@ -68,6 +69,7 @@
 		526E3F5C2A69BCEF00F1279E /* CatGallery+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CatGallery+CoreDataClass.swift"; path = "RandomCatGeneratorSwift/CatGallery+CoreDataClass.swift"; sourceTree = "<group>"; };
 		526E3F5D2A69BCEF00F1279E /* CatGallery+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CatGallery+CoreDataProperties.swift"; path = "RandomCatGeneratorSwift/CatGallery+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		526E3F602A69C09E00F1279E /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		526E3F642A6A8A9100F1279E /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		7C6AA1F82A6A6C1B0023CF34 /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		7C6AA2032A6A6E4B0023CF34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7C6AA2052A6A6EF30023CF34 /* CatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatResponseModel.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		7C6AA1F72A6A6BEF0023CF34 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				526E3F642A6A8A9100F1279E /* Interactor.swift */,
 				7C6AA1F82A6A6C1B0023CF34 /* APITarget.swift */,
 				7C6AA2032A6A6E4B0023CF34 /* NetworkManager.swift */,
 			);
@@ -334,6 +337,7 @@
 				7C6AA2062A6A6EF30023CF34 /* CatResponseModel.swift in Sources */,
 				526B96932A62CF9900F663A9 /* SceneDelegate.swift in Sources */,
 				526B96C32A62EC4500F663A9 /* GalleryVC.swift in Sources */,
+				526E3F652A6A8A9100F1279E /* Interactor.swift in Sources */,
 				526E3F5E2A69BCEF00F1279E /* CatGallery+CoreDataClass.swift in Sources */,
 				526E3F5F2A69BCEF00F1279E /* CatGallery+CoreDataProperties.swift in Sources */,
 				7C6AA1F92A6A6C1B0023CF34 /* APITarget.swift in Sources */,
