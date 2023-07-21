@@ -23,6 +23,7 @@ class MainVC: UIViewController {
         
         
         updateImage()
+        //self.catImageView.image = Interactor.shared.downloadAnonymousImage()
         // Do any additional setup after loading the view.
     }
     required init?(coder aDecoder: NSCoder) {
@@ -66,6 +67,7 @@ extension MainVC {
             switch result {
                 
             case let .success(response):
+                print(12)
                 let url = BASE_URL + "/cat/" + response._id
                 print(url)
                 self.currentCat = response
@@ -85,7 +87,10 @@ extension MainVC {
                 
                 
             case let .failure(error):
+                print(13)
                 print(error)
+                self.currentCat = nil
+                self.catImageView.image = Interactor.shared.downloadAnonymousImage()
             }
         }
     }

@@ -37,7 +37,7 @@ class Interactor{
                 guard let data = data, error == nil else {
                     print("Error downloading image: \(String(describing: error))")
                     DispatchQueue.main.async {
-                        completion(nil)
+                        completion(self.downloadAnonymousImage())
                     }
                     return
                 }
@@ -49,7 +49,7 @@ class Interactor{
             }.resume()
         } else {
             print("Invalid URL for the image")
-            completion(nil)
+            completion(downloadAnonymousImage())
         }
     }
     
@@ -86,4 +86,12 @@ class Interactor{
         }
     }
     
+    func downloadAnonymousImage() -> UIImage {
+        if let filePath = Bundle.main.path(forResource: "AnonymousCat", ofType: "png"){
+            let fileURL = URL(fileURLWithPath: filePath)
+            let img = UIImage(contentsOfFile: fileURL.path)
+            return img!
+        }
+        return UIImage()
+    }
 }
