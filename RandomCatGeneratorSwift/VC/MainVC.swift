@@ -42,6 +42,7 @@ class MainVC: UIViewController {
     
     
     @IBAction func generateNewCatButtonTapped(_ sender: Any) {
+        
     }
 }
 
