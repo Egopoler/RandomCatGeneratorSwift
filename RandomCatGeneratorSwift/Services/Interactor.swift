@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class Interactor{
     static let shared: Interactor = {
@@ -18,6 +19,17 @@ class Interactor{
         
     }
     
+    lazy var frc: NSFetchedResultsController<CatGallery> = {
+        let request = CatGallery.fetchRequest()
+        request.sortDescriptors = []
+        let frc = NSFetchedResultsController(fetchRequest: request,
+            managedObjectContext: PersistentContainer.shared.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        //frc.delegate = self
+        return frc
+    }()
     
     func downloadImage(from str: String, completion: @escaping (UIImage?) -> Void) {
             if let imageUrl = URL(string: str) {
@@ -40,6 +52,13 @@ class Interactor{
                 completion(nil)
             }
         }
-
+    }
+    
+    func addInModel(from cat_id: String){
+        let newCat = CatGallery(context: PersistentContainer.shared.viewContext)
+        newCat.id = cat_id
+        newCat.image = ""
+        PersistentContainer.shared.saveContext()
+    }
     
 }
