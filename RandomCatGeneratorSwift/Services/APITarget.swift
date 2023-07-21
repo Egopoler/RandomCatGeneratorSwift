@@ -15,7 +15,7 @@ enum APITarget {
 extension APITarget: TargetType {
 
     var baseURL: URL {
-        guard let url = URL(string: "https://cataas.com/cat?json=true") else {
+        guard let url = URL(string: "https://cataas.com") else {
             fatalError("Cannot access URL")
         }
         return url
