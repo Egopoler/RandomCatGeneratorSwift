@@ -10,6 +10,9 @@ import UIKit
 
 class MainVC: UIViewController {
     
+    
+    @IBOutlet weak var catImageView: UIImageView!
+    
     let manager: NetworkManagerProtocol = NetworkManger()
     
     
@@ -42,7 +45,7 @@ class MainVC: UIViewController {
     
     
     @IBAction func generateNewCatButtonTapped(_ sender: Any) {
-        
+        updateImage()
     }
 }
 
@@ -53,9 +56,23 @@ extension MainVC {
             switch result {
                 
             case let .success(response):
+                let url = BASE_URL + "/cat/" + response._id
+                print(url)
                 
-                print(response._id)
-               
+                let image = Interactor.shared.downloadImage(from: url) { image in
+                    guard let image = image else {
+                        print("Failed to download image")
+                        return
+                    }
+
+                    print(image == nil)
+                    self.catImageView.image = image
+                    print("image was set")
+                    
+                }
+                
+                
+                
             case let .failure(error):
                 print(error)
             }

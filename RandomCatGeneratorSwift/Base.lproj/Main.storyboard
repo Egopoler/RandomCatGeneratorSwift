@@ -94,6 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cdz-QM-YYD"/>
                     <connections>
+                        <outlet property="catImageView" destination="07A-TL-cXD" id="Fxk-PU-He1"/>
                         <segue destination="FOc-Zg-WHi" kind="show" identifier="ToGalleryVC" id="iXd-RO-qMx"/>
                     </connections>
                 </viewController>

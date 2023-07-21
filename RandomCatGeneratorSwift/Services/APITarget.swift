@@ -5,6 +5,8 @@
 //  Created by user242913 on 7/21/23.
 //
 
+let BASE_URL = "https://cataas.com"
+
 import Foundation
 import Moya
 	
@@ -15,7 +17,7 @@ enum APITarget {
 extension APITarget: TargetType {
 
     var baseURL: URL {
-        guard let url = URL(string: "https://cataas.com") else {
+        guard let url = URL(string: BASE_URL) else {
             fatalError("Cannot access URL")
         }
         return url
