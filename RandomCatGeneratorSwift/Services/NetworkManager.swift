@@ -9,7 +9,7 @@ import Moya
 import Foundation
 
 protocol NetworkManagerProtocol {
-    func fetchCharacters(completion: @escaping (Result<CatResponseModel, Error>) -> Void)
+    func fetchCat(completion: @escaping (Result<CatResponseModel, Error>) -> Void)
 }
 
 
@@ -18,7 +18,7 @@ final class NetworkManger: NetworkManagerProtocol {
 
     private var provider = MoyaProvider<APITarget>()
 
-    func fetchCharacters(completion: @escaping (Result<CatResponseModel, Error>) -> Void) {
+    func fetchCat(completion: @escaping (Result<CatResponseModel, Error>) -> Void) {
         request(target: .getRandomCat, completion: completion)
     }
 }

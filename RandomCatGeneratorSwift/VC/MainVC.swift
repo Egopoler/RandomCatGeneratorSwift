@@ -10,15 +10,16 @@ import UIKit
 
 class MainVC: UIViewController {
     
-    
-    
-    
+    let manager: NetworkManagerProtocol = NetworkManger()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        updateImage()
         // Do any additional setup after loading the view.
     }
     required init?(coder aDecoder: NSCoder) {
@@ -42,11 +43,21 @@ class MainVC: UIViewController {
     
     @IBAction func generateNewCatButtonTapped(_ sender: Any) {
     }
-    
-    
-    
-    
-    
-    
+}
 
+
+extension MainVC {
+    func updateImage() {
+        manager.fetchCat { result in
+            switch result {
+                
+            case let .success(response):
+                
+                print(response._id)
+               
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
 }
