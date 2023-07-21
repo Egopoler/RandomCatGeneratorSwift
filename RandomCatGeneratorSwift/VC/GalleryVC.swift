@@ -32,6 +32,11 @@ class GalleryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        do{
+            try frc.performFetch()
+        }catch{
+            print(error)
+        }
         //Interactor.shared.deleteAllCats()
         // Do any additional setup after loading the view.
     }
@@ -65,12 +70,21 @@ class GalleryVC: UIViewController {
 }
 extension GalleryVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let sections = frc.sections{
+            return sections[section].numberOfObjects
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let catCell = tableView.dequeueReusableCell(withIdentifier: "CatTableViewCell") as? CatTableViewCell
         else { return UITableViewCell() }
+        print("add real cat")
+        catCell.setUpData(frc.object(at: indexPath))
+        
+        
+        
         return catCell
     }
     

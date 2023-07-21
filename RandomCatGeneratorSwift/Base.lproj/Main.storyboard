@@ -117,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="251" id="7ed-2c-2aC" customClass="CatTableViewCell" customModule="RandomCatGeneratorSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CatTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatTableViewCell" rowHeight="251" id="7ed-2c-2aC" customClass="CatTableViewCell" customModule="RandomCatGeneratorSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ed-2c-2aC" id="iUl-3t-hjw">
@@ -142,6 +142,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FOc-Zg-WHi" id="D4Y-Nd-mZS"/>
+                                    <outlet property="delegate" destination="FOc-Zg-WHi" id="dP0-cf-96i"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMT-Ie-gcb"/>
