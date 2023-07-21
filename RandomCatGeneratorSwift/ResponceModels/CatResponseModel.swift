@@ -13,7 +13,7 @@ struct CatResponseModel: Codable {
     let owner: String?
     let file: String
     let mimetype: String
-    let size: Int
+    let size: Int?
     let _id: String
     let url: String
 }

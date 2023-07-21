@@ -113,9 +113,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DQm-bc-RLl">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="5" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DQm-bc-RLl">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.83594070894699923" blue="0.84114621200390105" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.86149480984017746" blue="0.84827733582871911" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.70154332155411059" blue="0.88032453722849757" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CatTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatTableViewCell" rowHeight="251" id="7ed-2c-2aC" customClass="CatTableViewCell" customModule="RandomCatGeneratorSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="251"/>
@@ -137,6 +139,7 @@
                                                 <constraint firstItem="Rk9-wo-xhj" firstAttribute="centerY" secondItem="iUl-3t-hjw" secondAttribute="centerY" id="ym6-E8-wG1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97254908080000002" green="0.83529412749999998" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="catImage" destination="Rk9-wo-xhj" id="8ye-2Q-Egi"/>
                                         </connections>
@@ -151,10 +154,10 @@
                         <viewLayoutGuide key="safeArea" id="zMT-Ie-gcb"/>
                         <color key="backgroundColor" red="0.98039215800000001" green="0.89019608500000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="zMT-Ie-gcb" firstAttribute="bottom" secondItem="DQm-bc-RLl" secondAttribute="bottom" id="Ej1-K8-Wvy"/>
+                            <constraint firstAttribute="bottom" secondItem="DQm-bc-RLl" secondAttribute="bottom" id="CRR-p9-1Ig"/>
                             <constraint firstItem="DQm-bc-RLl" firstAttribute="leading" secondItem="zMT-Ie-gcb" secondAttribute="leading" id="bSX-7Y-akX"/>
-                            <constraint firstItem="DQm-bc-RLl" firstAttribute="top" secondItem="zMT-Ie-gcb" secondAttribute="top" id="buI-RK-4ln"/>
                             <constraint firstItem="zMT-Ie-gcb" firstAttribute="trailing" secondItem="DQm-bc-RLl" secondAttribute="trailing" id="dFW-nT-q9J"/>
+                            <constraint firstItem="DQm-bc-RLl" firstAttribute="top" secondItem="zMT-Ie-gcb" secondAttribute="top" id="edK-I7-O7e"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p5s-oD-OyP"/>
@@ -186,9 +189,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
