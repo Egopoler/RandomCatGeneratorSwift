@@ -50,9 +50,9 @@ class Interactor{
             } else {
                 print("Invalid URL for the image")
                 completion(nil)
-            }
         }
     }
+    
     
     func addInModel(from cat_id: String){
         let newCat = CatGallery(context: PersistentContainer.shared.viewContext)
