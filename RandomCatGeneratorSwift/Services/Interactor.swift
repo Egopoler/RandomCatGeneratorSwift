@@ -32,24 +32,24 @@ class Interactor{
     }()
     
     func downloadImage(from str: String, completion: @escaping (UIImage?) -> Void) {
-            if let imageUrl = URL(string: str) {
-                URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-                    guard let data = data, error == nil else {
-                        print("Error downloading image: \(String(describing: error))")
-                        DispatchQueue.main.async {
-                            completion(nil)
-                        }
-                        return
-                    }
-
+        if let imageUrl = URL(string: str) {
+            URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("Error downloading image: \(String(describing: error))")
                     DispatchQueue.main.async {
-                        let downloadedImage = UIImage(data: data)
-                        completion(downloadedImage)
+                        completion(nil)
                     }
-                }.resume()
-            } else {
-                print("Invalid URL for the image")
-                completion(nil)
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    let downloadedImage = UIImage(data: data)
+                    completion(downloadedImage)
+                }
+            }.resume()
+        } else {
+            print("Invalid URL for the image")
+            completion(nil)
         }
     }
     
@@ -57,8 +57,33 @@ class Interactor{
     func addInModel(from cat_id: String){
         let newCat = CatGallery(context: PersistentContainer.shared.viewContext)
         newCat.id = cat_id
-        newCat.image = ""
+        newCat.image = BASE_URL + "/cat/" + cat_id
         PersistentContainer.shared.saveContext()
+        print("cat added")
+        self.writeAllCats()
+    }
+    func writeAllCats(){
+        let fetchRequest: NSFetchRequest<CatGallery> = CatGallery.fetchRequest()
+        do {
+            let objects = try PersistentContainer.shared.viewContext.fetch(fetchRequest)
+            for object in objects {
+                print("\(object.id), \(object.image)")
+            }
+        } catch {
+            print("Error write all cats")
+        }
+    }
+    func deleteAllCats(){
+        let fetchRequest: NSFetchRequest<CatGallery> = CatGallery.fetchRequest()
+        do {
+            let objects = try PersistentContainer.shared.viewContext.fetch(fetchRequest)
+            for object in objects {
+                PersistentContainer.shared.viewContext.delete(object)
+            }
+            try PersistentContainer.shared.viewContext.save()
+        } catch {
+            print("Error deleting")
+        }
     }
     
 }

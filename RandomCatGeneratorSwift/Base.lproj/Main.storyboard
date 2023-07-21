@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.89019608500000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="1OY-cC-NP2"/>
                                     <constraint firstAttribute="trailing" secondItem="07A-TL-cXD" secondAttribute="trailing" id="3XY-V6-xxr"/>
@@ -59,6 +59,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseForegroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="cg1-9n-4p5" eventType="touchUpInside" id="MU4-6b-Eu0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTB-mI-gJ0">
                                 <rect key="frame" x="60" y="603" width="273" height="60"/>

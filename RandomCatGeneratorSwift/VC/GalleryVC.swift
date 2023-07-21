@@ -32,6 +32,7 @@ class GalleryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        //Interactor.shared.deleteAllCats()
         // Do any additional setup after loading the view.
     }
     

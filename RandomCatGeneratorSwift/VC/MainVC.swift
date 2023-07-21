@@ -15,7 +15,7 @@ class MainVC: UIViewController {
     
     let manager: NetworkManagerProtocol = NetworkManger()
     
-    
+    var currentCat: CatResponseModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,16 @@ class MainVC: UIViewController {
     @IBAction func generateNewCatButtonTapped(_ sender: Any) {
         updateImage()
     }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard var cat_id: String = self.currentCat?._id else {return}
+        print("try to add this cat in model: \(cat_id)")
+        Interactor.shared.addInModel(from: cat_id)
+        
+        
+    }
+    
+    
 }
 
 
@@ -58,15 +68,16 @@ extension MainVC {
             case let .success(response):
                 let url = BASE_URL + "/cat/" + response._id
                 print(url)
+                self.currentCat = response
                 
-                let image = Interactor.shared.downloadImage(from: url) { image in
-                    guard let image = image else {
+                let img = Interactor.shared.downloadImage(from: url) { image in
+                    guard let img = image else {
                         print("Failed to download image")
                         return
                     }
 
-                    print(image == nil)
-                    self.catImageView.image = image
+                    print(img == nil)
+                    self.catImageView.image = img
                     print("image was set")
                     
                 }
